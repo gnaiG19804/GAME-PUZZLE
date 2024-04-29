@@ -3,7 +3,7 @@ package newbtl;
 import java.util.Random;
 import javax.swing.Icon;
 import javax.swing.JButton;
-import static newbtl.newbtl.counter;
+import static newbtl.newbtl1.counter;
 
 public class piece {
     
