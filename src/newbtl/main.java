@@ -4,9 +4,8 @@ public class main {
      public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new newbtl1().setVisible(true);
+                new menu().setVisible(true);
             }
         });
     }
 }
-
