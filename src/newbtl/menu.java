@@ -3,10 +3,9 @@ package newbtl;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.sql.*;
 import javax.swing.JPanel;
+
 
 
 
@@ -17,6 +16,7 @@ public class menu extends javax.swing.JFrame {
     private CardLayout card= new CardLayout();
     private JPanel cardPanel;
     private Ranking rank;
+
     public menu() {        
         initComponents();       
         conn = DatabaseConnection.getConnection();
@@ -32,32 +32,12 @@ public class menu extends javax.swing.JFrame {
         cardPanel.add(jPanel1, "rankingCard");
         jLabel1.add(jLabel2);
         jLabel1.add(jLabel3);
+        jLabel1.add(Sound);
+        jPanel1.add(jSlider1);
         jLabel2.setBounds(180,220, 150, 30);
         jLabel3.setBounds(180, 270, 150, 30);
-        jLabel2.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                jLabel2.setForeground(Color.RED);
-                jLabel2.setCursor(new Cursor(Cursor.HAND_CURSOR));
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                jLabel2.setForeground(Color.BLACK);
-                jLabel2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-            }
-        });
-        jLabel3.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                jLabel3.setForeground(Color.YELLOW);
-                jLabel3.setCursor(new Cursor(Cursor.HAND_CURSOR));
-            }
-            @Override
-            public void mouseExited(MouseEvent e) {
-                jLabel3.setForeground(Color.BLACK);
-                jLabel3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-            }
-        });
+        Sound.setBounds(10, 20, 80, 80);
+        jSlider1.setBounds(50, 50, 80, 80);
     }
     
     @SuppressWarnings("unchecked")
@@ -66,6 +46,8 @@ public class menu extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        Sound = new javax.swing.JLabel();
+        jSlider1 = new javax.swing.JSlider();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -79,6 +61,12 @@ public class menu extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel2MouseExited(evt);
+            }
         });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 2, 30)); // NOI18N
@@ -87,6 +75,22 @@ public class menu extends javax.swing.JFrame {
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel3MouseExited(evt);
+            }
+        });
+
+        Sound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newbtl/img/megaphone.png"))); // NOI18N
+        Sound.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SoundMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SoundMouseExited(evt);
             }
         });
 
@@ -136,7 +140,7 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, "card3");
@@ -161,13 +165,43 @@ public class menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jLabel4MouseClicked
 
+    private void SoundMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SoundMouseEntered
+        jSlider1.setVisible(true);
+    }//GEN-LAST:event_SoundMouseEntered
+
+    private void SoundMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SoundMouseExited
+        jSlider1.setVisible(false);
+    }//GEN-LAST:event_SoundMouseExited
+
+    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
+        jLabel2.setForeground(Color.RED);
+        jLabel2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jLabel2MouseEntered
+
+    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+        jLabel2.setForeground(Color.BLACK);
+        jLabel2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_jLabel2MouseExited
+
+    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
+        jLabel3.setForeground(Color.YELLOW);
+        jLabel3.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jLabel3MouseEntered
+
+    private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
+        jLabel3.setForeground(Color.BLACK);
+        jLabel3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_jLabel3MouseExited
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Sound;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSlider jSlider1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

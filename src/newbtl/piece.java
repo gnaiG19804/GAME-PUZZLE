@@ -1,7 +1,10 @@
 package newbtl;
 
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.Random;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -10,9 +13,11 @@ import static newbtl.PuzzleGame.counter;
 public class piece {
     private JButton[] buttons;
     private BufferedImage[] imageP;
+    private static Sound sound;
     public piece(BufferedImage[] imageP,JButton[] buttons) {
         this.imageP = imageP;
         this.buttons=buttons;
+        this.sound = new Sound();
     }
     
     public int[] ran(){
@@ -40,12 +45,13 @@ public class piece {
     }
     
     
-    public static void checkMove(JButton b1, JButton b2) {
+    public static void checkMove(JButton b1, JButton b2) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         Icon icon = b2.getIcon();
         if (icon == null) {
             b2.setIcon(b1.getIcon());
             b1.setIcon(null);
             counter++;
+             sound.playSoundMove();
         }
     }
      public void shuffle() {
