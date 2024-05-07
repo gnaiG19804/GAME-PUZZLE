@@ -7,6 +7,8 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -47,7 +49,7 @@ public class PuzzleGame extends javax.swing.JFrame {
         }
     }
 
-    public static void showMenu() {
+    public static void showMenu() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         menu newMenu = new menu();
         newMenu.setVisible(true);
     }
@@ -364,63 +366,135 @@ public class PuzzleGame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        piece.checkMove(jButton8, jButton5);
-        piece.checkMove(jButton8, jButton7);
-        piece.checkMove(jButton8, jButton9);
-        checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        try {
+            piece.checkMove(jButton8, jButton5);
+            piece.checkMove(jButton8, jButton7);
+            piece.checkMove(jButton8, jButton9);
+            checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        piece.checkMove(jButton6, jButton3);
-        piece.checkMove(jButton6, jButton5);
-        piece.checkMove(jButton6, jButton9);
-        checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        try {
+            piece.checkMove(jButton6, jButton3);
+            piece.checkMove(jButton6, jButton5);
+            piece.checkMove(jButton6, jButton9);
+            checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        piece.checkMove(jButton9, jButton6);
-        piece.checkMove(jButton9, jButton8);;
-        checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        try {
+            piece.checkMove(jButton9, jButton6);
+            piece.checkMove(jButton9, jButton8);;
+            checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        piece.checkMove(jButton7, jButton4);
-        piece.checkMove(jButton7, jButton8);
-        checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        try {
+            piece.checkMove(jButton7, jButton4);
+            piece.checkMove(jButton7, jButton8);
+            checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        piece.checkMove(jButton5, jButton2);
-        piece.checkMove(jButton5, jButton4);
-        piece.checkMove(jButton5, jButton6);
-        piece.checkMove(jButton5, jButton8);
-        checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        try {
+            piece.checkMove(jButton5, jButton2);
+            piece.checkMove(jButton5, jButton4);
+            piece.checkMove(jButton5, jButton6);
+            piece.checkMove(jButton5, jButton8);
+            checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        piece.checkMove(jButton4, jButton1);
-        piece.checkMove(jButton4, jButton5);
-        piece.checkMove(jButton4, jButton7);
-        checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        try {
+            piece.checkMove(jButton4, jButton1);
+            piece.checkMove(jButton4, jButton5);
+            piece.checkMove(jButton4, jButton7);
+            checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        piece.checkMove(jButton3, jButton2);
-        piece.checkMove(jButton3, jButton6);
-        checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        try {
+            piece.checkMove(jButton3, jButton2);
+            piece.checkMove(jButton3, jButton6);
+            checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        piece.checkMove(jButton2, jButton1);
-        piece.checkMove(jButton2, jButton3);
-        piece.checkMove(jButton2, jButton5);
-        checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        try {
+            piece.checkMove(jButton2, jButton1);
+            piece.checkMove(jButton2, jButton3);
+            piece.checkMove(jButton2, jButton5);
+            checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        piece.checkMove(jButton1, jButton2);
-        piece.checkMove(jButton1, jButton4);
-        checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        try {
+            piece.checkMove(jButton1, jButton2);
+            piece.checkMove(jButton1, jButton4);
+            checkWin.Won(counter, bt, imageP, jLabelNumOfClicks, timer, player, pe);
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -437,8 +511,16 @@ public class PuzzleGame extends javax.swing.JFrame {
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         frame=new JFrame("Exit");
         if(JOptionPane.showConfirmDialog(frame,"DO YOU WANT EXIT","Puzzle Game",JOptionPane.YES_NO_CANCEL_OPTION)==JOptionPane.YES_NO_OPTION){
-            this.hide();
-            showMenu();        
+            try {
+                this.hide();        
+                showMenu();
+            } catch (UnsupportedAudioFileException ex) {
+                Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (LineUnavailableException ex) {
+                Logger.getLogger(PuzzleGame.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_jLabel5MouseClicked
 

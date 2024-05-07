@@ -3,7 +3,10 @@ package newbtl;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.io.IOException;
 import java.sql.*;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JPanel;
 
 
@@ -16,12 +19,14 @@ public class menu extends javax.swing.JFrame {
     private CardLayout card= new CardLayout();
     private JPanel cardPanel;
     private Ranking rank;
+    private Sound sound;
 
-    public menu() {        
+    public menu() throws UnsupportedAudioFileException, IOException, LineUnavailableException  {        
         initComponents();       
         conn = DatabaseConnection.getConnection();
         play = new Player();
         game = new Game(conn,play);
+        sound=new Sound();
         this.setLocationRelativeTo(null);
         jLabel1.setLayout(null);      
         cardPanel = new JPanel();
@@ -38,6 +43,8 @@ public class menu extends javax.swing.JFrame {
         jLabel3.setBounds(180, 270, 150, 30);
         Sound.setBounds(10, 20, 80, 80);
         jSlider1.setBounds(50, 50, 80, 80);
+        setVisible(true);
+        sound.playMusicLoop();
     }
     
     @SuppressWarnings("unchecked")
@@ -131,7 +138,7 @@ public class menu extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel4))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,7 +147,7 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, "card3");
