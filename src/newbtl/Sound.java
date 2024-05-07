@@ -1,4 +1,4 @@
-package Logic;
+package newbtl;
 
 import javax.sound.sampled.*;
 import java.io.IOException;
@@ -49,17 +49,17 @@ public class Sound {
     }
 
     public void playSoundMove() {
-        playSound("/PUZZLE/sound/move.wav");
+        playSound("/newbtl/sound/move.wav");
     }
 
     public void playSoundWin(){
-        playSound("/PUZZLE/sound/win.wav");
+        playSound("/newbtl/sound/win.wav");
     }
     
     public void playMusicLoop() {
         try {
             if (isSoundOn()) {
-                InputStream audioSrc = getClass().getResourceAsStream("/PUZZLE/sound/music.wav");
+                InputStream audioSrc = getClass().getResourceAsStream("/newbtl/sound/music.wav");
                 AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(audioSrc);
                 clip = AudioSystem.getClip();
                 clip.open(audioInputStream);

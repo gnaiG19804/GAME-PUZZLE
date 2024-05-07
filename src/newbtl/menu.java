@@ -1,9 +1,11 @@
-package PUZZLE;
+package newbtl;
 
-import Data.Player;
-import Logic.Sound;
-import Data.Ranking;
-import Data.DatabaseConnection;
+import newbtl.Sound;
+import newbtl.Ranking;
+import newbtl.PuzzleGame;
+import newbtl.Player;
+import newbtl.Login;
+import newbtl.DatabaseConnection;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -12,9 +14,7 @@ import java.sql.*;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JPanel;
-import Data.Game;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import newbtl.Game;
 
 public class menu extends javax.swing.JFrame {
     private Connection conn;
@@ -27,7 +27,7 @@ public class menu extends javax.swing.JFrame {
     
 
     public menu() throws UnsupportedAudioFileException, IOException, LineUnavailableException  {        
-        initComponents();      
+        initComponents();       
         conn = DatabaseConnection.getConnection();
         play = new Player();
         game = new Game(conn,play);
@@ -53,7 +53,7 @@ public class menu extends javax.swing.JFrame {
     public void showMenu(){
         setVisible(true);
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -68,7 +68,7 @@ public class menu extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 30)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PUZZLE/img/play.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newbtl/img/play.png"))); // NOI18N
         jLabel2.setText("CHƠI");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -83,7 +83,7 @@ public class menu extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 2, 30)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PUZZLE/img/trophy.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newbtl/img/trophy.png"))); // NOI18N
         jLabel3.setText("BXH");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -97,7 +97,7 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
-        jSound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PUZZLE/img/megaphone.png"))); // NOI18N
+        jSound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newbtl/img/megaphone.png"))); // NOI18N
         jSound.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jSoundMouseClicked(evt);
@@ -113,10 +113,10 @@ public class menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PUZZLE/img/menu.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newbtl/img/menu.jpg"))); // NOI18N
         getContentPane().add(jLabel1, "card2");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PUZZLE/img/logout.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newbtl/img/logout.png"))); // NOI18N
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
@@ -175,7 +175,6 @@ public class menu extends javax.swing.JFrame {
         if(game.getPlayGame()){
             this.hide();
             new PuzzleGame(this).setVisible(true);
-            
         }
     }//GEN-LAST:event_jLabel2MouseClicked
 
@@ -187,7 +186,8 @@ public class menu extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         CardLayout cardLayout = (CardLayout) cardPanel.getLayout();
-        cardLayout.show(cardPanel, "menuCard");    
+        cardLayout.show(cardPanel, "menuCard");
+        
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jSoundMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSoundMouseEntered

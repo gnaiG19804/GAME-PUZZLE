@@ -1,5 +1,4 @@
-package Logic;
-import Data.Player;
+package newbtl;
 import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;

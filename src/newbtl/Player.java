@@ -1,4 +1,4 @@
-package Data;
+package newbtl;
 
 
 public class Player {
@@ -73,5 +73,9 @@ public class Player {
     @Override
     public String toString() {
         return "Player{" + "playerName=" + playerName + ", clickCount=" + clickCount + ", startTime=" + startTime + ", finishTime=" + finishTime + ", displayTime=" + displayTime + '}';
-    }   
+    }
+
+    
 }
+
+

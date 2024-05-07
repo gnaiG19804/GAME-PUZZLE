@@ -1,10 +1,10 @@
-package PUZZLE;
+package newbtl;
 
 
-import Data.Player;
-import Data.Game;
+
+import newbtl.Game;
 import javax.swing.JOptionPane;
-import static PUZZLE.PuzzleGame.name;
+import static newbtl.PuzzleGame.name;
 
 public class Login {
     private Game game;

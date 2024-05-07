@@ -1,4 +1,4 @@
-package Logic;
+package newbtl;
 
 import javax.swing.ImageIcon;
 import java.awt.image.BufferedImage;
@@ -8,10 +8,10 @@ import javax.imageio.ImageIO;
 import javax.swing.JLabel;
 
 public class Image {
-    private String[] imagePaths={"src\\PUZZLE\\img\\puzzle1.jpg",
-        "src\\PUZZLE\\img\\puzzle2.jpg",
-        "src\\PUZZLE\\img\\puzzle3.jpg",
-        "src\\PUZZLE\\img\\puzzle4.jpg"};
+    private String[] imagePaths={"src\\newbtl\\img\\puzzle1.jpg",
+        "src\\newbtl\\img\\puzzle2.jpg",
+        "src\\newbtl\\img\\puzzle3.jpg",
+        "src\\newbtl\\img\\puzzle4.jpg"};
     private int indexImage;
     private BufferedImage[] imageP;
 
