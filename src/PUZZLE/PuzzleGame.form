@@ -299,7 +299,7 @@
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/newbtl/img/reset.png"/>
+              <Image iconType="3" name="/PUZZLE/img/reset.png"/>
             </Property>
           </Properties>
           <Events>
@@ -309,7 +309,7 @@
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/newbtl/img/help.png"/>
+              <Image iconType="3" name="/PUZZLE/img/help.png"/>
             </Property>
           </Properties>
           <Events>
@@ -319,7 +319,7 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/newbtl/img/exit.png"/>
+              <Image iconType="3" name="/PUZZLE/img/exit.png"/>
             </Property>
           </Properties>
           <Events>
@@ -329,7 +329,7 @@
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/newbtl/img/swap.png"/>
+              <Image iconType="3" name="/PUZZLE/img/swap.png"/>
             </Property>
           </Properties>
           <Events>
@@ -344,7 +344,7 @@
           <Color blue="9e" green="a0" red="5f" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/newbtl/img/puzzle1.jpg"/>
+          <Image iconType="3" name="/PUZZLE/img/puzzle1.jpg"/>
         </Property>
       </Properties>
     </Component>
@@ -360,7 +360,7 @@
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/newbtl/img/chronometer.png"/>
+          <Image iconType="3" name="/PUZZLE/img/chronometer.png"/>
         </Property>
       </Properties>
     </Component>
@@ -368,7 +368,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/newbtl/img/click.png"/>
+          <Image iconType="3" name="/PUZZLE/img/click.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">

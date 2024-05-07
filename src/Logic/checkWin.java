@@ -1,18 +1,16 @@
-package newbtl;
-import newbtl.Sound;
-import newbtl.Player;
-import newbtl.GameRecods;
+package Logic;
+
+
+import Data.GameRecods;
+import Data.Player;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import static newbtl.PuzzleGame.name;
+import static PUZZLE.PuzzleGame.name;
 
 
 public class checkWin {

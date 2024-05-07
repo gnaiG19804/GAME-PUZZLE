@@ -1,9 +1,11 @@
-package newbtl;
+package Data;
+
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
+    
     private static final String SERVER = "LAPTOP-25H9QNQ2\\SQLEXPRESS";
     private static final String USER = "sa";
     private static final String PASSWORD = "giang19082004";

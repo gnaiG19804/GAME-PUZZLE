@@ -1,6 +1,5 @@
-package newbtl;
+package Data;
 
-import newbtl.DatabaseConnection;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

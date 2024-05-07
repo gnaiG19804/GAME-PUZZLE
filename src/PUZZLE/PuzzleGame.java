@@ -1,5 +1,12 @@
-package newbtl;
+package PUZZLE;
 
+import Data.Player;
+import Logic.Image;
+import Logic.piece;
+import Logic.time;
+import Logic.checkWin;
+import Logic.Helper;
+import Logic.Sound;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Insets;
@@ -19,7 +26,7 @@ public class PuzzleGame extends javax.swing.JFrame {
     public static Player player;   
     private static time timer;
     private Image image;
-    static String name;
+    public static String name;
     private static BufferedImage[] imageP = new BufferedImage[9];    
     JButton []bt = new JButton[8];
     private piece pe;
@@ -221,28 +228,28 @@ public class PuzzleGame extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newbtl/img/reset.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PUZZLE/img/reset.png"))); // NOI18N
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel7MouseClicked(evt);
             }
         });
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newbtl/img/help.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PUZZLE/img/help.png"))); // NOI18N
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel8MouseClicked(evt);
             }
         });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newbtl/img/exit.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PUZZLE/img/exit.png"))); // NOI18N
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
             }
         });
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newbtl/img/swap.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PUZZLE/img/swap.png"))); // NOI18N
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
@@ -277,16 +284,16 @@ public class PuzzleGame extends javax.swing.JFrame {
         );
 
         jLabel2.setForeground(new java.awt.Color(95, 160, 158));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newbtl/img/puzzle1.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PUZZLE/img/puzzle1.jpg"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel3.setText("00:00:00");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newbtl/img/chronometer.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PUZZLE/img/chronometer.png"))); // NOI18N
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newbtl/img/click.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PUZZLE/img/click.png"))); // NOI18N
         jLabel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 0, true));
 
         jLabelNumOfClicks.setFont(new java.awt.Font("STXihei", 1, 36)); // NOI18N
@@ -457,9 +464,10 @@ public class PuzzleGame extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
     private JFrame frame;
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        frame=new JFrame("Exit");
+        frame=new JFrame("Exit");        
         if(JOptionPane.showConfirmDialog(frame,"DO YOU WANT EXIT","Puzzle Game",JOptionPane.YES_NO_CANCEL_OPTION)==JOptionPane.YES_NO_OPTION){
             this.hide();
+            player.setClickCount(0);
             mainMenu.setVisible(true);
         }
     }//GEN-LAST:event_jLabel5MouseClicked

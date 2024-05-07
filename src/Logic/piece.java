@@ -1,7 +1,6 @@
-package newbtl;
+package Logic;
 
-import newbtl.Sound;
-import newbtl.Player;
+import Data.Player;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Random;
@@ -57,7 +56,7 @@ public class piece {
             player.setClickCount(player.getClickCount()+1);
             System.out.println(player.getClickCount());
             sound.playSoundMove();
-            
+  
         }
     }
      public void shuffle() {
