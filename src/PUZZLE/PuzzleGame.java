@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
 
 
 public class PuzzleGame extends javax.swing.JFrame {
-    private menu mainMenu;
+    private menu menu;
     public static Player player;   
     private static time timer;
     private Image image;
@@ -33,9 +33,9 @@ public class PuzzleGame extends javax.swing.JFrame {
     private boolean gameStarted = true; 
     private checkWin checkWin;
     
-    public PuzzleGame(menu mainMenu) {   
+    public PuzzleGame(menu menu) {
+        this.menu=menu;
         initComponents();
-        this.mainMenu=mainMenu;
         player=Player.getInstance();
         image=new Image();
         imageP=image.getImagePieces();
@@ -323,7 +323,7 @@ public class PuzzleGame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(79, 79, 79)
                                 .addComponent(jLabel4)))
-                        .addGap(15, 380, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -468,7 +468,7 @@ public class PuzzleGame extends javax.swing.JFrame {
         if(JOptionPane.showConfirmDialog(frame,"DO YOU WANT EXIT","Puzzle Game",JOptionPane.YES_NO_CANCEL_OPTION)==JOptionPane.YES_NO_OPTION){
             this.hide();
             player.setClickCount(0);
-            mainMenu.setVisible(true);
+            menu.showMenu();
         }
     }//GEN-LAST:event_jLabel5MouseClicked
 

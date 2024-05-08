@@ -7,7 +7,7 @@ import java.io.InputStream;
 public class Sound {
     private static Sound instance;
     private Clip clip;
-    private boolean soundOn;
+    public boolean soundOn;
 
     private Sound() {
         this.soundOn = true;
@@ -23,7 +23,7 @@ public class Sound {
     public void toggleSound() {
         this.soundOn = !soundOn;
         if (soundOn) {
-            playMusicLoop();
+            playMusicLoop();            
         } else {
             stopMusic(); 
         }

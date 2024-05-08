@@ -13,8 +13,6 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JPanel;
 import Data.Game;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class menu extends javax.swing.JFrame {
     private Connection conn;
@@ -174,8 +172,7 @@ public class menu extends javax.swing.JFrame {
         }
         if(game.getPlayGame()){
             this.hide();
-            new PuzzleGame(this).setVisible(true);
-            
+            game.startGame(this);
         }
     }//GEN-LAST:event_jLabel2MouseClicked
 

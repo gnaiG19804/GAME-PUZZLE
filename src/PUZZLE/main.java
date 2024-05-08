@@ -12,11 +12,7 @@ public class main {
             public void run() {
                 try {
                     new menu().setVisible(true);
-                } catch (UnsupportedAudioFileException ex) {
-                    Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IOException ex) {
-                    Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (LineUnavailableException ex) {
+                } catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
                     Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 }

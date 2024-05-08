@@ -30,7 +30,7 @@ public class Login {
                 int option = JOptionPane.showConfirmDialog(null, "Bạn có muốn quay lại menu không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
                 if (option == JOptionPane.YES_OPTION) {
                     menuOn=true;
-                    return; 
+                    break;
                 } else {
                     menuOn=false;
                     continue;

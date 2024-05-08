@@ -1,5 +1,7 @@
 package Data;
 
+import PUZZLE.PuzzleGame;
+import PUZZLE.menu;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import java.security.MessageDigest;
@@ -56,10 +58,7 @@ public class Game {
 
             try (ResultSet resultSet = checkStatement.executeQuery()) {
                 if (resultSet.next()) {
-                    int choice = JOptionPane.showConfirmDialog(null,
-                            "Tên người chơi đã có bạn có muốn tiếp tục với tên này?",
-                            "Xác nhận",
-                            JOptionPane.YES_NO_OPTION);
+                    int choice = JOptionPane.showConfirmDialog(null,"Tên người chơi đã có bạn có muốn tiếp tục với tên này?","Xác nhận",JOptionPane.YES_NO_OPTION);
                     if (choice == JOptionPane.YES_OPTION) {
                         String storedPassword = resultSet.getString("Pass");
                         if (storedPassword != null) {
@@ -140,5 +139,8 @@ public class Game {
             JOptionPane.showMessageDialog(null, "Lỗi khi thêm người chơi mới vào cơ sở dữ liệu: " + e.getMessage());
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, e);
         }
+    }
+    public void startGame(menu m){
+        new PuzzleGame(m).setVisible(true);
     }
 }

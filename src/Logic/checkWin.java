@@ -1,7 +1,7 @@
 package Logic;
 
 
-import Data.GameRecods;
+import Data.GameRecords;
 import Data.Player;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -24,9 +24,8 @@ public class checkWin {
     public static void Won(JButton[] buttons, BufferedImage[] imageP, JLabel jLabelNumOfClicks, time timer, piece pe) {
         jLabelNumOfClicks.setText(Integer.toString(player.getClickCount()));
         if (isGameWon(buttons, imageP)) {
-            
             sound.playSoundWin();
-            GameRecods records = new GameRecods();
+            GameRecords records = new GameRecords();
             timer.stopTimer();
             player.setFinishTime();
             JOptionPane.showMessageDialog(null, "Chúc mừng! Bạn đã chiến thắng!", "Thông báo", JOptionPane.INFORMATION_MESSAGE);

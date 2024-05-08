@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class GameRecods {
+public class GameRecords {
     
     public void savePlayerAchievement(String playerName, int clickCount, long completionTime) {
         Connection conn = null;
@@ -46,8 +46,7 @@ public class GameRecods {
                     } else {
                         JOptionPane.showMessageDialog(null, "Không thể cập nhật thông tin thành tích của người chơi.");
                     }
-                } else {
-                    JOptionPane.showMessageDialog(null, "Chúc mừng bạn đã chiến thắng");
+               
                 }
             }
         } catch (SQLException e) {
