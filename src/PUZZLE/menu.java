@@ -21,7 +21,7 @@ public class menu extends javax.swing.JFrame {
     private CardLayout card= new CardLayout();
     private JPanel cardPanel;
     private Ranking rank;
-    private Sound soundInstance;
+    private Sound sound;
     
 
     public menu() throws UnsupportedAudioFileException, IOException, LineUnavailableException  {        
@@ -29,7 +29,7 @@ public class menu extends javax.swing.JFrame {
         conn = DatabaseConnection.getConnection();
         play = new Player();
         game = new Game(conn,play);
-        soundInstance = Sound.getInstance();
+        sound = Sound.getInstance();
         this.setLocationRelativeTo(null);
         jLabel1.setLayout(null);      
         cardPanel = new JPanel();
@@ -45,7 +45,8 @@ public class menu extends javax.swing.JFrame {
         jLabel3.setBounds(180, 270, 150, 30);
         jSound.setBounds(10, 20, 70, 70);
         setVisible(true);
-        soundInstance.playMusicLoop();
+        sound.playMusicLoop();
+        sound.soundOn=false;
     }
     
     public void showMenu(){
@@ -216,11 +217,7 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseExited
 
     private void jSoundMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSoundMouseClicked
-        if (Sound.getInstance().isSoundOn()) {
-            Sound.getInstance().toggleSound();
-        } else {
-            Sound.getInstance().toggleSound();
-        }
+         sound.toggleSound();
     }//GEN-LAST:event_jSoundMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

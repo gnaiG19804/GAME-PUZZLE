@@ -24,6 +24,8 @@ public class checkWin {
     public static void Won(JButton[] buttons, BufferedImage[] imageP, JLabel jLabelNumOfClicks, time timer, piece pe) {
         jLabelNumOfClicks.setText(Integer.toString(player.getClickCount()));
         if (isGameWon(buttons, imageP)) {
+//            ImageIcon icon = new ImageIcon(imageP[8]);
+//            buttons[8].setIcon(icon);
             sound.playSoundWin();
             GameRecords records = new GameRecords();
             timer.stopTimer();

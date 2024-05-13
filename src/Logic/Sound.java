@@ -20,8 +20,11 @@ public class Sound {
         return instance;
     }
 
+    public void rv(){
+        this.soundOn=!soundOn;
+    }
+    
     public void toggleSound() {
-        this.soundOn = !soundOn;
         if (soundOn) {
             playMusicLoop();            
         } else {

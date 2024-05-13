@@ -21,7 +21,7 @@ public class Helper {
         for (int i = 0; i < 8; i++) {
             buttons[i].setIcon(icons[i]);
         }
-        buttons[8].setIcon(null);
+        buttons[8].setIcon(icons[8]);
         JOptionPane.showMessageDialog(null, "Bạn đã dùng trợ giúp để hoàn thành, thành tích của bạn sẽ không được tính!", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
         timer.startTimer();
         player.setClickCount(0);

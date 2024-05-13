@@ -11,7 +11,8 @@ public class Image {
     private String[] imagePaths={"src\\PUZZLE\\img\\puzzle1.jpg",
         "src\\PUZZLE\\img\\puzzle2.jpg",
         "src\\PUZZLE\\img\\puzzle3.jpg",
-        "src\\PUZZLE\\img\\puzzle4.jpg"};
+        "src\\PUZZLE\\img\\puzzle4.jpg","src\\PUZZLE\\img\\puzzle5.jpg"
+        };
     private int indexImage;
     private BufferedImage[] imageP;
 
@@ -54,7 +55,6 @@ public class Image {
                     pieceHeight * y + pieceHeight,
                     null
                 );
-
                 g.dispose();
             }
         }

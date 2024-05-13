@@ -54,9 +54,7 @@ public class piece {
             b2.setIcon(b1.getIcon());
             b1.setIcon(null);
             player.setClickCount(player.getClickCount()+1);
-            System.out.println(player.getClickCount());
             sound.playSoundMove();
-  
         }
     }
      public void shuffle() {
